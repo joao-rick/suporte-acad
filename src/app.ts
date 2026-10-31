@@ -2,6 +2,7 @@ import { Estudante } from "./models/Estudante.js";
 import { Turma } from "./models/Turma.js";
 import { Chamado } from "./models/Chamado.js";
 import { FilaAtendimento } from "./models/FilaAtendimento.js";
+import { cadastrarEstudante, validarEstudante } from "./services/estudantes.js";
 
 const estudante1 = new Estudante("2026001", "Ana Souza", "Sistemas de Informação");
 const estudante2 = new Estudante("2026002", "Bruno Lima", "Ciência da Computação");
@@ -24,8 +25,13 @@ fila.adicionar(chamado2);
 console.log("Fila antes do atendimento:", fila.resumo());
 
 const proximo = fila.retirarProximo();
-console.log("Próximo chamado (FIFO):", proximo.resumo());
-proximo.iniciarAtendimento("Técnico Marcos").finalizar();
-console.log("Chamado finalizado:", proximo.resumo());
+if (proximo) {
+  console.log("Próximo chamado (FIFO):", proximo.resumo());
+  proximo.iniciarAtendimento("Técnico Marcos").finalizar();
+  console.log("Chamado finalizado:", proximo.resumo());
+}
 console.log("Fila restante:", fila.resumo());
 console.log("Fila vazia retorna:", new FilaAtendimento().retirarProximo());
+
+const validacao = validarEstudante({ nome: "Carla Mendes", matricula: "2026003" });
+if (validacao.valido && validacao.estudante) cadastrarEstudante(validacao.estudante);

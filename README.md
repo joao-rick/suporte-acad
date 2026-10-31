@@ -1,13 +1,13 @@
-# Suporte acadêmico OO
+# Suporte acadêmico tipado
 
-Exemplo de sistema de suporte acadêmico em JavaScript com Node.js e módulos ECMAScript. O projeto demonstra encapsulamento com campos privados, associação entre chamado e estudante, composição dos vínculos dentro da turma e atendimento FIFO.
+Primeira migração do cadastro acadêmico modular para TypeScript em modo estrito. O projeto preserva os modelos de estudantes, turmas e chamados e acrescenta serviços tipados para cadastro, consulta e validação de entrada.
 
 ## Executar
 
-Requer Node.js com suporte a módulos ESM.
+Requer Node.js e npm.
 
 ```sh
+npm install
 npm start
+npm run typecheck
 ```
-
-`Estudante` mantém notas privadas e retorna cópias. `Turma` cria e mantém vínculos privados, impedindo matrícula repetida. `Chamado` só permite as transições `ABERTO → EM_ATENDIMENTO → FINALIZADO`. `FilaAtendimento` não expõe sua coleção e retorna `null` quando vazia.
