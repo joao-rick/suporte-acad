@@ -8,6 +8,7 @@
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "types": ["node"],
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true

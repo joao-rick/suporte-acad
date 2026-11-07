@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "tsx src/app.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/**/*.test.ts",
+    "benchmark": "tsx src/aplicacoes/comparacaoFilas.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
